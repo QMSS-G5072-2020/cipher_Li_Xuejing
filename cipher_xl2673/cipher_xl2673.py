@@ -1,4 +1,32 @@
 def cipher(text, shift, encrypt=True):
+    '''
+    Cipher code that encrypt and decrypt texts.
+    
+    Parameters
+    ----------
+    text: str
+        The text string to be encrypted or decrypted
+    shift: int
+        An interger number upon which the text will shift along the alphabet list
+    encrypt: bool
+        A boolean value. If it's True, we would encrypt the text; if it's False, we would decrypt the text
+    
+    Returns
+    -------
+    Str
+    Either an encrypted or decrypted text
+    
+ 
+    Example
+    ------------------
+    from cipher_xl2673 import cipher_xl2673
+    >>> Encrypted = cipher('bird',5,encrypt = True)
+    >>> 'gnwi'
+
+    >>> Decrypted = cipher(Encrypted, 5, encrypted = False)
+    >>> 'bird'
+    '''
+
     alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
     new_text = ''
     for c in text:
@@ -12,16 +40,3 @@ def cipher(text, shift, encrypt=True):
     return new_text
     
     
-'''
- The name of this function is called cipher, which includes two positional arguments and one keyword argument. Inside the function, we first create a list of all the letters in the alphabet, including lowercased and uppercased, and name that list "alphabet". Next, we create an empty list named "new_text" inside which we will store our output. The function says for every letter in our input for the text argument, we will first find if the letter is in the list alphabet. If it's not in the alphabet list, we will return the output exactly as the imput. If it's in the alphabet list, we want to return an output where the lens doesn't change but the position of each letter either shifts to the right or to the left depends on whether the encrypt argument is true or not.
- 
-Encrypting Example
-------------------
->>> Encrypted = cipher('bird',5,encrypt = True)
->>> 'gnwi'
-
-Decrypting Example
-------------------
->>> Decrypting = cipher(Encrypted, 5, encrypted = False)
->>> 'bird'
-'''
